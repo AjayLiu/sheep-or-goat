@@ -10,7 +10,7 @@ import os
 import glob
 import re
 from pathlib import Path
-
+import json
 
 # Flask utils
 from flask import Flask, redirect, url_for, request, render_template
@@ -34,7 +34,7 @@ learn = load_learner(path/'models')
 def model_predict(img_path):
     img = open_image(img_path)
     pred_class,pred_idx,outputs = learn.predict(img)
-    return pred_class
+    return outputs
 
 
 @app.route('/', methods=['GET'])
@@ -57,11 +57,34 @@ def upload():
 
         # Make prediction
         preds = model_predict(file_path)
-        return str(preds)
+
+        #Goat
+        if(preds[0] > preds[1]):
+            numStr = str(preds[0] * 100)
+            numStr = numStr[numStr.index('(')+1 : numStr.index('.')]
+            return numStr + "% Goat"
+        else:
+            #Sheep
+            numStr = str(preds[1] * 100)
+            numStr = numStr[numStr.index('(')+1 : numStr.index('.')]
+            return numStr + "% Sheep"        
+
     return None
 
 
 if __name__ == '__main__':    
     app.run()
 
+# app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
+# @app.after_request
+# def add_header(r):
+#     """
+#     Add headers to both force latest IE rendering engine or Chrome Frame,
+#     and also to cache the rendered page for 10 minutes.
+#     """
+#     r.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+#     r.headers["Pragma"] = "no-cache"
+#     r.headers["Expires"] = "0"
+#     r.headers['Cache-Control'] = 'public, max-age=0'
+#     return r
