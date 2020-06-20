@@ -23,7 +23,7 @@ app = Flask(__name__)
 
 
 path = Path("path")
-classes = ['healthy', 'junk']
+classes = ['sheep', 'goat']
 # data2 = ImageDataBunch.single_from_classes(path, classes, ds_tfms=get_transforms(), size=224).normalize(imagenet_stats)
 # learn = create_cnn(data2, models.resnet34)
 # learn.load('stage-2')
@@ -32,16 +32,9 @@ learn = load_learner(path/'models')
 
 
 def model_predict(img_path):
-    """
-       model_predict will return the preprocessed image
-    """   
     img = open_image(img_path)
     pred_class,pred_idx,outputs = learn.predict(img)
-    print(pred_class)
-    return pred_idx.item()
-    
-
-
+    return pred_class
 
 
 @app.route('/', methods=['GET'])
