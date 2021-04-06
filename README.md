@@ -1,3 +1,6 @@
+# Sheep or Goat
+![screenshot](preview.png)
+
 ### About
 Upload an image of a real life sheep or goat and the trained neural network will try to determine if it is a sheep or a goat.
 
