@@ -72,7 +72,7 @@ Here is a guide if you want to clone my website and modify it for yourself, all 
 
 ### Development
 
-To run the website, use the [VSCode Live Server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) to run templates/index.html
+To run the website, use something like the [VSCode Code Runner Extension](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) to run app.py. Then you can view the site using the URL provided from the command line output.
 
 <!-- LICENSE -->
 ## License
