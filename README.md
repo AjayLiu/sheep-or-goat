@@ -29,6 +29,7 @@
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
         <li><a href="#development">Development</a></li>
+        <li><a href="#development">Deployment</a></li>
       </ul>
     </li>
     <li><a href="#license">License</a></li>
@@ -68,11 +69,14 @@ Here is a guide if you want to clone my website and modify it for yourself, all 
    ```
 2. Create and train your model as outlined in https://youtu.be/XfoYk_Z5AkI
 3. Upload your model (.pkl) in path/models
-4. Publish the site on Heroku using continuous git integration. :tada:
 
 ### Development
 
 To run the website, use something like the [VSCode Code Runner Extension](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) to run app.py. Then you can view the site using the URL provided from the command line output.
+
+### Deployment
+1. Publish the site on Heroku using continuous git integration. :tada:
+
 
 <!-- LICENSE -->
 ## License
