@@ -49,7 +49,7 @@ Upload an image of a real life sheep or goat and the trained neural network will
 ### Built With
 * [Fast.ai](https://fast.ai)
 * [Paperspace](https://www.paperspace.com/)
-* [Heroku](https://heroku.com)
+* [Render](https://render.com/)
 
 
 <!-- GETTING STARTED -->
@@ -75,7 +75,8 @@ Here is a guide if you want to clone my website and modify it for yourself, all 
 To run the website, use something like the [VSCode Code Runner Extension](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) to run app.py. Then you can view the site using the URL provided from the command line output.
 
 ### Deployment
-1. Publish the site on Heroku using continuous git integration. :tada:
+1. Publish the site on Render using continuous git integration.
+2. Add environment variable `PYTHON_VERSION=3.9.15`
 
 
 <!-- LICENSE -->
